@@ -1,0 +1,11 @@
+2023-07-28 09:33:43,476 - INFO - Data preprocessing script started.
+2023-07-28 09:34:01,014 - INFO - Data preprocessing script started.
+2023-07-28 09:34:02,682 - INFO - Data file successfully loaded.
+2023-07-28 09:34:02,992 - INFO - Data splitted.
+2023-07-28 09:34:03,208 - INFO - Data scaled.
+2023-07-28 09:34:04,124 - INFO - Cross-validation starting...
+2023-07-28 09:38:21,211 - INFO - Data preprocessing script started.
+2023-07-28 09:38:22,864 - INFO - Data file successfully loaded.
+2023-07-28 09:38:23,127 - INFO - Data splitted.
+2023-07-28 09:38:23,238 - INFO - Data scaled.
+2023-07-28 09:38:24,016 - INFO - Cross-validation starting...

@@ -14,11 +14,11 @@ import mlflow.sklearn
 import os
 
 # Set up
-logging.basicConfig(filename = '../../logs/data_prep_training.log', level = logging.INFO,
+logging.basicConfig(filename = './logs/data_prep_training.log', level = logging.INFO,
                     format = '%(asctime)s - %(levelname)s - %(message)s')
 
 # MLFlow folder tracking
-mlflow_tracking_uri = '../../data/mlflow/mlruns'
+mlflow_tracking_uri = './data/mlflow/mlruns'
 
 # Set the environment variable
 os.environ['MLFLOW_TRACKING_URI'] = mlflow_tracking_uri
@@ -58,7 +58,7 @@ def evaluate(sk_model, x_test, y_test):
 logging.info('Data preprocessing script started.')
 
 # Load data
-data_path = '../../data/raw/archive/creditcard.csv'
+data_path = './data/raw/archive/creditcard.csv'
 df = pd.read_csv(data_path)
 logging.info('Data file successfully loaded.')
 
