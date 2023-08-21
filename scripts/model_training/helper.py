@@ -63,3 +63,52 @@ def save_confusion_matrix_plot() -> None:
     """
     plt.savefig('sklearn_conf_matrix.png')
     mlflow.log_artifact('sklearn_conf_matrix.png')
+
+def save_model(sk_model: Any) -> None:
+    """
+    Save a scikit-learn model as an artifact.
+    
+    Args:
+        sk_model (Any): Scikit-learn model object.
+    """
+    mlflow.sklearn.log_model(sk_model, 'model')
+    
+def log_params(params: dict) -> None:
+    """
+    Log a dictionary of parameters.
+    
+    Args:
+        params (dict): Dictionary of parameters.
+    """
+    for k, v in params.items():
+        mlflow.log_param(k, v)
+
+def log_model_params(sk_model: Any) -> None:
+    """
+    Log a scikit-learn model's parameters.
+    
+    Args:
+        sk_model (Any): Scikit-learn model object.
+    """
+    for k, v in sk_model.get_params().items():
+        mlflow.log_param(k, v)
+    
+def log_requirements(requirements_file: str) -> None:
+    """
+    Log a requirements.txt file as an artifact.
+    
+    Args:
+        requirements_file (str): Path to requirements.txt file.
+    """
+    mlflow.log_artifact(requirements_file)
+
+def log_data(data: Any, data_name: str) -> None:
+    """
+    Log a pandas DataFrame as an artifact.
+    
+    Args:
+        data (Any): Pandas DataFrame.
+        data_name (str): Name of the DataFrame.
+    """
+    data.to_csv(f'{data_name}.csv', index=False)
+    mlflow.log_artifact(f'{data_name}.csv')
